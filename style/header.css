@@ -5,6 +5,7 @@
   width: 100%;
   z-index: 5;
   transition: top 0.3s ease-in-out;
+  background-color: var(--bg-black);
 }
 .header_transparent {
   top: 0;
@@ -54,11 +55,16 @@
   .header__logo-link {
     margin: 0 0 0 0;
   }
-  .logo {
-    max-width: 94px;
-  }
+
   .header__menu {
     gap: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header__logo-text {
+    font-size: 20px;
+    /* font-size: calc(20px + (32 - 20) * ((100vw - 320px) / (767 - 320))); */
   }
 }
 

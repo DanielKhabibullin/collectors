@@ -3,7 +3,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-black);
 }
 .main {
   position: relative;
@@ -16,9 +15,9 @@
   background-position: top left, center center;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover; */
-  color: #fff;
+  color: var(--font-white);
 
-    background-image: url('/collectors/img/main_bg.webp');
+  background-image: url('/collectors/img/main_bg.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -35,7 +34,7 @@
 }
 
 .main-wrapper {
-  padding: 222px 0 223px 0;
+  padding: 200px 0 200px 0;
   position: relative;
   z-index: 2;
 }
@@ -48,20 +47,21 @@
   gap: 20px;
 }
 .main__title {
-  max-width: 920px;
+  max-width: 910px;
   text-align: center;
+  line-height: 150%;
+}
+.main__title_nowrap {
+  white-space: nowrap;
 }
 .main__subtitle {
-  margin: 32px 0 0 0;
-  text-align: left;
-  color: var(--font-white);
-}
 
+}
 
 .phone__link {
   padding: 12px 24px;
-  font-family: inherit;
-  font-weight: 400;
+  min-width: 170px;
+  min-height: 45px;
   font-size: 16px;
   text-align: center;
   text-decoration: none;
@@ -89,22 +89,28 @@
 }
 .phone__link:active {
   background-color: rgba( 255, 255, 255, 0.2);
-
+}
+.main__link {
+  min-width: 170px;
+  min-height: 45px;
 }
 
 
 @media (max-width: 1440px) {
-  .main__title {
-    max-width: calc(290px + (919 - 290) * ((100vw - 320px) / (1440 - 320)));
-  }
   .main-wrapper {
-    padding: calc(107px + (222 - 107) * ((100vw - 320px) / (1440 - 320))) 0 calc(40px + (223 - 40) * ((100vw - 320px) / (1440 - 320))) 0;
+    padding: calc(100px + (200 - 100) * ((100vw - 320px) / (1440 - 320))) 0 calc(40px + (200 - 40) * ((100vw - 320px) / (1440 - 320))) 0;
   }
-  .main__subtitle {
-    margin: calc(16px + (35 - 16) * ((100vw - 320px) / (1440 - 320))) 0 0 0;
-  }
+
 }
 
 @media (max-width: 767px) {
+  .main__title {
+    font-size: calc(20px + (32 - 20) * ((100vw - 320px) / (767 - 320)));
+  }
+}
 
+@media (max-width: 376px) {
+  .main__btn-wrapper {
+    flex-direction: column;
+  }
 }
