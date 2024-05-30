@@ -1,5 +1,6 @@
 .footer {
   position: relative;
+  background-color: var(--bg-footer);
 }
 
 .footer__wrapper {
