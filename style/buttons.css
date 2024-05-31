@@ -36,16 +36,18 @@
 }
 .btn:active {
   background-color: rgb(255, 255, 255, 0.2);
+  outline: none;
 }
 
 .btn_grey:focus {
-  outline: 1px solid var(--white);
+  outline: 1px solid var(--bg-black);
 }
 .btn_grey:hover {
-  background-color: rgb(255, 255, 255, 0.1);
+  background-color: #737373;;
 }
 .btn_grey:active {
-  background-color: rgb(255, 255, 255, 0.2);
+  background-color: #595959;
+  outline: none;
 }
 
 .btn_lg {

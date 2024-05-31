@@ -17,7 +17,7 @@
   background-size: auto, cover; */
   color: var(--font-white);
 
-  background-image: url('../img/main_bg.webp');
+  background-image: url('/main_bg.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -89,6 +89,7 @@
 }
 .phone__link:active {
   background-color: rgba( 255, 255, 255, 0.2);
+  outline: none;
 }
 .main__link {
   min-width: 170px;
