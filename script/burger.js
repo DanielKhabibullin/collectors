@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const navLinks = document.querySelectorAll('.navigation__link');
 
   navLinks.forEach(link => {
-    if (link.getAttribute('href') === currentPath) {
+    if (link.getAttribute('href').replace('/collectors', '') === currentPath) {
       link.classList.add('navigation__link_active');
     }
   });
