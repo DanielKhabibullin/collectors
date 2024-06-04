@@ -29,39 +29,31 @@
   display: none;
 }
 .btn:focus {
+  outline: none
+}
+.btn:focus-visible {
   outline: 1px solid var(--white);
 }
-.btn:hover {
-  background-color: rgb(255, 255, 255, 0.1);
+@media (any-hover: hover) {
+  .btn:hover {
+    background-color: rgb(255, 255, 255, 0.1);
+  }
 }
 .btn:active {
   background-color: rgb(255, 255, 255, 0.2);
   outline: none;
 }
-
-.btn_grey:focus {
+.btn_grey:focus-visible {
   outline: 1px solid var(--bg-black);
 }
-.btn_grey:hover {
-  background-color: #737373;;
+@media (any-hover: hover) {
+  .btn_grey:hover {
+    background-color: #737373;;
+  }
 }
 .btn_grey:active {
   background-color: #595959;
   outline: none;
-}
-
-.btn_lg {
-  padding: 24px 40px;
-  font-size: 24px;
-}
-
-@media (max-width: 1440px) {
-
-  .btn_lg {
-    padding: calc(12px + (24 - 12) * ((100vw - 320px) / (1440 - 320))) calc(24px + (40 - 24) * ((100vw - 320px) / (1440 - 320)));
-    font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1440 - 320)));
-  }
-
 }
 
 @media (max-width: 500px) {

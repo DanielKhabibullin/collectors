@@ -13,10 +13,35 @@
   font-size: 20px;
 }
 .footer__copyright {
+  white-space: nowrap;
+}
+.footer__link {
+  display: inline-block;
+  color: var(--grey);
+  transition: color 0.3s ease-in-out;
+  font-size: 20px;
+}
+.footer__link:focus {
+  outline: none;
+}
+.footer__link:focus-visible {
+  text-decoration: underline;
+}
+@media (any-hover: hover) {
+  .footer__link:hover {
+    color: var(--orange);
+  }
+}
+.footer__link:active {
+  color: var(--bg-black);
+
 }
 .social-list {
   display: flex;
-  gap: 7px;
+  gap: 15px;
+  align-items: center;
+  /* flex-wrap: wrap;
+  justify-content: end; */
 }
 .social-list__item {
 }
@@ -30,21 +55,60 @@
   color: var(--grey);
   transition: color 0.3s ease-in-out;
 }
-.social-list__svg_phone:hover {
+.social-list__link:focus {
+  outline: none;
+}
+.social-list__link:focus-visible .social-list__svg_phone {
   color: var(--font-black);
 }
-.social-list__svg_vk:hover {
+.social-list__link:focus-visible .social-list__svg_vk {
   color: #0077FF;
 }
-.social-list__svg_inst:hover {
+.social-list__link:focus-visible .social-list__svg_inst  {
   color: #C13584;
 }
-.social-list__svg_tg:hover {
+.social-list__link:focus-visible .social-list__svg_tg  {
   color: #229ED9;
+}
+@media (any-hover: hover) {
+  .social-list__svg_phone:hover {
+    color: var(--orange);
+  }
+  .social-list__svg_vk:hover {
+    color: #0077FF;
+  }
+  .social-list__svg_inst:hover {
+    color: #C13584;
+  }
+  .social-list__svg_tg:hover {
+    color: #229ED9;
+  }
 }
 
 @media (max-width: 1440px) {
   .footer__wrapper {
     padding: calc(20px + (40 - 20) * ((100vw - 320px) / (1440 - 320))) 0 calc(20px + (40 - 20) * ((100vw - 320px) / (1440 - 320))) 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer__copyright {
+    font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (767 - 320)));
+
+  }
+  .footer__link {
+    font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (767 - 320)));
+  }
+}
+
+@media (max-width: 400px) {
+  .social-list {
+    flex-wrap: wrap;
+    justify-content: end;
+  }
+}
+@media (max-width: 366px) {
+  .footer__copyright {
+    align-self: end;
   }
 }

@@ -1,6 +1,7 @@
 .particulars {
   padding: 50px 0 50px 0;
   background-color: var(--bg-white);
+  margin: auto;
 }
 .particulars__title {
   margin: 0 0 50px 0;

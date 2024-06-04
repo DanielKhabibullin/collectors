@@ -99,37 +99,47 @@ document.addEventListener("DOMContentLoaded", function() {
       navigation.classList.toggle('navigation_active');
     });
   }
-  // scroll and close burger after clicking navigation buttons
-  const navLinks = document.querySelectorAll('.navigation__link[data-goto]');
-  const allNavLinks = document.querySelectorAll('.navigation__link');
 
-  navLinks.forEach(navLink => {
-    navLink.addEventListener('click', onNavLinkClick);
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll('.navigation__link');
+
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('navigation__link_active');
+    }
   });
 
-  function onNavLinkClick(e) {
-    const navLink = e.target;
-    if (navLink.dataset.goto && document.querySelector(navLink.dataset.goto)) {
-      const gotoBlock = document.querySelector(navLink.dataset.goto);
-      const gotoBlockValue = gotoBlock.getBoundingClientRect().top + window.scrollY - document.querySelector('header').offsetHeight;
+  // scroll and close burger after clicking navigation buttons
+  // const navLinks = document.querySelectorAll('.navigation__link[data-goto]');
+  // const allNavLinks = document.querySelectorAll('.navigation__link');
 
-      allNavLinks.forEach(allNavLink => {
-        allNavLink.classList.remove('navigation__link_active');
-      })
-      navLink.classList.add('navigation__link_active');
-      if (burger.classList.contains('burger_active')) {
-        burger.classList.remove('burger_active');
-        navigation.classList.remove('navigation_active');
-      }
-      if (scrollController.isScrollDisabled) {
-        scrollController.enabledScroll();
-      }
+  // navLinks.forEach(navLink => {
+  //   navLink.addEventListener('click', onNavLinkClick);
+  // });
 
-      window.scrollTo({
-        top: gotoBlockValue,
-        behavior: 'smooth'
-      });
-      e.preventDefault();
-    }
-  }
+  // function onNavLinkClick(e) {
+  //   const navLink = e.target;
+  //   if (navLink.dataset.goto && document.querySelector(navLink.dataset.goto)) {
+  //     const gotoBlock = document.querySelector(navLink.dataset.goto);
+  //     const gotoBlockValue = gotoBlock.getBoundingClientRect().top + window.scrollY - document.querySelector('header').offsetHeight;
+
+  //     allNavLinks.forEach(allNavLink => {
+  //       allNavLink.classList.remove('navigation__link_active');
+  //     })
+  //     navLink.classList.add('navigation__link_active');
+  //     if (burger.classList.contains('burger_active')) {
+  //       burger.classList.remove('burger_active');
+  //       navigation.classList.remove('navigation_active');
+  //     }
+  //     if (scrollController.isScrollDisabled) {
+  //       scrollController.enabledScroll();
+  //     }
+
+  //     window.scrollTo({
+  //       top: gotoBlockValue,
+  //       behavior: 'smooth'
+  //     });
+  //     e.preventDefault();
+  //   }
+  // }
 });
