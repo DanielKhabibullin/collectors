@@ -25,6 +25,10 @@
   color: var(--white);
   background-color: var(--grey);
 }
+.btn_orange {
+  color: var(--white);
+  background-color: var(--orange);
+}
 .btn.hide {
   display: none;
 }
@@ -43,6 +47,19 @@
   background-color: rgb(255, 255, 255, 0.2);
   outline: none;
 }
+.btn_orange:focus-visible {
+  outline: 1px solid var(--bg-black);
+}
+@media (any-hover: hover) {
+  .btn_orange:hover {
+    background-color: #e29c87;
+  }
+}
+.btn_orange:active {
+  background-color: #de7d60;
+  outline: none;
+}
+
 .btn_grey:focus-visible {
   outline: 1px solid var(--bg-black);
 }

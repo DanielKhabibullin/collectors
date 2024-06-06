@@ -2,6 +2,7 @@
   padding: 50px 0 50px 0;
   background-color: var(--bg-white);
   margin: auto 0;
+  color: var(--grey);
 }
 
 .contacts__title {
